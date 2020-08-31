@@ -37,6 +37,9 @@ client.on('message', message =>{
     if(command === 'yt'){
         client.commands.get('yt').execute(message, args);
          } 
+     if(command === 'commands'){
+        client.commands.get('commands').execute(message, args);
+         } 
 });
 
 
