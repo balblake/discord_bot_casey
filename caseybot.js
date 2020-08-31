@@ -51,4 +51,4 @@ client.on('ready', () =>{
 
  
  
-client.login(process.env.token);
+client.login('NzQ5MDE0MTA2MDk0NDM2NDIz.X0lzvg._SxtVM1smJRmnv9DbBuGVJFYI_E');
