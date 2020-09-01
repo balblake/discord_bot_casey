@@ -2,6 +2,28 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
  
 const prefix = '!';
+
+const TwitchClientID = "twitchclientID";
+const TwitchURL = "https://api.twitch.tv/kraken/streams/channelname";
+const channelName = "channelname";
+
+client.registry.registerGroup('random', 'Random');
+client.registry.registerDefaults
+client.registry.registerCommandsIn(__dirname + "/commands");
+
+client.login('login'); 
+
+client.on("message", function(message) {
+    if (message.content === "!Live") {
+        getJSON("https://api.twitch.tv/kraken/streams/channelname", function(err, res) {
+            if (res.stream == null) {
+                message.reply(message, "currently not live");
+            } else {
+                message.reply(message, "currently live");
+            }
+        });
+    }
+});
  
 const fs = require('fs');
  
