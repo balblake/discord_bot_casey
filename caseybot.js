@@ -54,7 +54,14 @@ client.on('message', message =>{
         } 
 })
 
+client.on('guildMemberAdd', member => {
+    // Set the member's roles by id
+    member.setRoles(['386344485761843220']);
 
+    // Don't know the role id?
+    const role = guild.roles.find(role => role.name === 'Trucker babies');
+    member.addRole(role);
+});
 
 
 
@@ -62,9 +69,5 @@ client.on('message', message =>{
 client.on('ready', () =>{
     client.user.setActivity('!commands', { type: 'WATCHING'}).catch(console.error)
 }) // for the type: PLAYING WATCHING LISTENING STREAMING
-
-client.on('serverNewMember', function(server, user) {
-    user.addTo(server.roles.get("Trucker babies"));
-});
  
 client.login('NzQ5MDE0MTA2MDk0NDM2NDIz.X0lzvg._SxtVM1smJRmnv9DbBuGVJFYI_E');
