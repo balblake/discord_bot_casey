@@ -60,7 +60,10 @@ client.on('message', message =>{
         } 
     if(command === 'ban'){
         client.commands.get('ban').execute(message, args);
-           } 
+       } 
+    if(command === 'mcommands'){
+        client.commands.get('mcommands').execute(message, args);
+       } 
 })
 
 
