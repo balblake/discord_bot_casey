@@ -52,6 +52,12 @@ client.on('message', message =>{
      if(command === 'ig'){
         client.commands.get('ig').execute(message, args);
         } 
+    if(command === 'ban'){
+        client.commands.get('ban').execute(message, args);
+        } 
+    if(command === 'kick'){
+        client.commands.get('kick').execute(message, args);
+        } 
 })
 
 
