@@ -40,7 +40,19 @@ client.on('message', message =>{
      if(command === 'commands'){
         client.commands.get('commands').execute(message, args);
          } 
-});
+     if(command === 'tiktok'){
+        client.commands.get('tiktok').execute(message, args);
+         } 
+     if(command === 'instagram'){
+        client.commands.get('instagram').execute(message, args);
+         } 
+     if(command === 'insta'){
+        client.commands.get('insta').execute(message, args);
+         } 
+     if(command === 'ig'){
+        client.commands.get('ig').execute(message, args);
+        } 
+})
 
 
 
