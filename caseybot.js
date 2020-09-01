@@ -56,11 +56,15 @@ client.on('message', message =>{
 
 
 
+
+
 // Keep this at the bottom
 client.on('ready', () =>{
     client.user.setActivity('!commands', { type: 'WATCHING'}).catch(console.error)
 }) // for the type: PLAYING WATCHING LISTENING STREAMING
 
- 
+client.on('serverNewMember', function(server, user) {
+    user.addTo(server.roles.get("Trucker babies"));
+});
  
 client.login('NzQ5MDE0MTA2MDk0NDM2NDIz.X0lzvg._SxtVM1smJRmnv9DbBuGVJFYI_E');
