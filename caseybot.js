@@ -54,14 +54,14 @@ client.on('message', message =>{
         } 
 })
 
-client.on('guildMemberAdd', member => {
-    // Set the member's roles by id
-    member.setRoles(['386344485761843220']);
+client.on("guildMemberAdd", member => {
 
-    // Don't know the role id?
-    const role = guild.roles.find(role => role.name === 'Trucker babies');
-    member.addRole(role);
-});
+    let welcomeChannel = member.guild.channels.find(channel => channel.name === "welcome");
+    welcomeChannel.send(`Welcome ${member.displayname}! Have fun and be positive!`)
+
+    let memberRole = member.guild.roles.find(role => role.id == "386344485761843220");
+    member.addRole(memberRole);
+})
 
 
 
