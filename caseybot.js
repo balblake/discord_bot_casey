@@ -175,8 +175,6 @@ client.on('message', message =>{
         } 
 })
 
-member.guild.channel.get('576617716023033865').send('**' + member.user.username + '**, has joined the server!'); 
-
 // Keep this at the bottom
 client.on('ready', () =>{
     client.user.setActivity('!commands', { type: 'WATCHING'}).catch(console.error)
