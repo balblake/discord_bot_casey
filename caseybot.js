@@ -7,10 +7,6 @@ const TwitchClientID = "twitchclientID";
 const TwitchURL = "https://api.twitch.tv/kraken/streams/channelname";
 const channelName = "channelname";
 
-client.registry.registerGroup('random', 'Random');
-client.registry.registerDefaults
-client.registry.registerCommandsIn(__dirname + "/commands");
-
 client.login('login'); 
 
 client.on("message", function(message) {
