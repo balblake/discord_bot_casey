@@ -46,7 +46,7 @@ client.on('message', message =>{
 
 // Keep this at the bottom
 client.on('ready', () =>{
-    client.user.setActivity('!youtube, !twitch, !twitter', { type: 'STREAMING'}).catch(console.error)
+    client.user.setActivity('!commands', { type: 'STREAMING'}).catch(console.error)
 })
 
  
