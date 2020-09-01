@@ -52,6 +52,9 @@ client.on('message', message =>{
      if(command === 'ig'){
         client.commands.get('ig').execute(message, args);
         } 
+    if(command === 'clear'){
+        client.commands.get('clear').execute(message, args);
+        } 
 })
 
 
