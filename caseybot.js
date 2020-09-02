@@ -20,7 +20,7 @@ client.on('guildMemberAdd', member => {
     member.roles.add(role);
     });
     client.on('guildMemberAdd', member => {
-    member.guild.channels.cache.get('576617716023033865').send(`Welcome, ${user} to casey's discord server! Make sure to check out his socials by typing in #bot-commands !socials`);
+    member.guild.channels.cache.get('576617716023033865').send(`Welcome, **${userJoin}** to casey's discord server! Make sure to check out his socials by typing in #bot-commands !socials`);
     });
 client.once('ready', () => {
     console.log('Casey Bot is online!');
