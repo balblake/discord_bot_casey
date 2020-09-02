@@ -28,6 +28,26 @@ client.on('guildMemberAdd', member => {
     const targetChannelId = '707989016078843914'
     member.guild.channels.cache.get('576617716023033865').send(`Welcome, **${member}** to casey's discord server!\nMake sure to check out his socials by going to ${member.guild.channels.cache.get(targetChannelId).toString()} and typing !socials`);
     });
+
+    client.on('message', message => {
+        if(message.member.roles.cache.has('386344247843880960')){
+        if (message.content.startsWith("!message")) {
+            // Get the channel mention
+            if (message.mentions.channels.size == 0) {
+                message.reply("please mention a channel first.");
+            }
+            else {
+                let targetChannel = message.mentions.channels.first();
+                // Get the message to print
+      
+                const args = message.content.split(" ").slice(2);
+                let saytext = args.join(" ");
+                targetChannel.send(saytext);
+                message.delete();
+            }
+            }
+        }
+      });
     
 client.once('ready', () => {
     console.log('Casey Bot is online!');
