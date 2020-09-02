@@ -18,6 +18,7 @@ client.on('guildMemberAdd', member => {
     console.log('User ' + member.user.username + ' has joined the server!')
     var role = member.guild.roles.cache.find(role => role.name === 'Trucker babies');
     member.roles.add(role)
+    client.channels.get('576617716023033865').send('Hello' + member.user.username + "welcome to casey's discord!");
   });
  
 client.once('ready', () => {
