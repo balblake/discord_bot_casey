@@ -15,11 +15,15 @@ for(const file of commandFiles){
 }
 
 client.on('guildMemberAdd', member => {
-    member.guild.channels.cache.find('576617716023033865').send("Welcome"); 
     console.log('User ' + member.user.username + ' has joined the server!');
     var role = member.guild.roles.cache.find(role => role.name === 'Trucker babies');
     member.roles.add(role);
-  });
+    member.guild.channels.get('576617716023033865').send({embed: {
+        color: 3447003,
+        title: "**SERVER NAME** Welcome Bot!",
+        url: "WEBSITE URL",
+        description: "Welcome *" + member + "* to the **Server name** discord server!"
+        }}); });
 
 client.once('ready', () => {
     console.log('Casey Bot is online!');
