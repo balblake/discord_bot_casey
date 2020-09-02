@@ -39,7 +39,7 @@ client.on('guildMemberAdd', member => {
             else {
                 let targetChannel = message.mentions.channels.first();
                 // Get the message to print
-      
+
                 const args = message.content.split(" ").slice(2);
                 let saytext = args.join(" ");
                 targetChannel.send(saytext);
