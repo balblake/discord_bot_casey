@@ -15,7 +15,7 @@ for(const file of commandFiles){
 }
 
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('576617716023033865').send("Welcome"); 
+    member.guild.channels.find('576617716023033865').send("Welcome"); 
     console.log('User ' + member.user.username + ' has joined the server!');
     var role = member.guild.roles.cache.find(role => role.name === 'Trucker babies');
     member.roles.add(role);
