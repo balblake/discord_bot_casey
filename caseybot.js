@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const config = require('./token.json');
+const memberCount = require('./member-count')
 
 client.login(config.token);
  
@@ -30,6 +31,7 @@ client.on('guildMemberAdd', member => {
     
 client.once('ready', () => {
     console.log('Casey Bot is online!');
+    memberCount(client)
 });
 
 client.on('message', message =>{
