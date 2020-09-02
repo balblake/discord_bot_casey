@@ -18,7 +18,7 @@ client.on('guildMemberAdd', member => {
     console.log('User ' + member.user.username + ' has joined the server!');
     var role = member.guild.roles.cache.find(role => role.name === 'Trucker babies');
     member.roles.add(role);
-    member.guild.channels.get('576617716023033865').send({embed: {
+    member.guild.channels.cache.get('576617716023033865').send({embed: {
         color: 3447003,
         title: "**SERVER NAME** Welcome Bot!",
         url: "WEBSITE URL",
