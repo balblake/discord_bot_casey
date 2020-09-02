@@ -1,5 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
+const config = require('./token.json');
+
+client.login(config.token);
  
 const prefix = '!';
  
@@ -83,5 +87,3 @@ client.on('message', message =>{
 client.on('ready', () =>{
     client.user.setActivity('!commands', { type: 'WATCHING'}).catch(console.error)
 }) // for the type: PLAYING WATCHING LISTENING STREAMING
- 
-client.login('NzQ5MDE0MTA2MDk0NDM2NDIz.X0lzvg._SxtVM1smJRmnv9DbBuGVJFYI_E');
