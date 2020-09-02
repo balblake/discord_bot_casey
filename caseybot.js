@@ -20,7 +20,8 @@ client.on('guildMemberAdd', member => {
     member.roles.add(role);
     });
     client.on('guildMemberAdd', member => {
-    member.guild.channels.cache.get('576617716023033865').send(`Welcome, **${member}** to casey's discord server! Make sure to check out his socials by typing in #bot-commands !socials`);
+    const targetChannelId = '707989016078843914'
+    member.guild.channels.cache.get('576617716023033865').send(`Welcome, **${member}** to casey's discord server!\nMake sure to check out his socials by going to ${member.guild.channels.cache.get(targetChannelId).toString()}`);
     });
     
 client.once('ready', () => {
