@@ -71,6 +71,9 @@ client.on('message', message =>{
     if(command === 'mcommands'){
         client.commands.get('mcommands').execute(message, args);
        } 
+    if(command === 'socials'){
+        client.commands.get('socials').execute(message, args);
+        } 
 })
 
 
