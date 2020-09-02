@@ -18,9 +18,10 @@ client.on('guildMemberAdd', member => {
     console.log('User ' + member.user.username + ' has joined the server!');
     var role = member.guild.roles.cache.find(role => role.name === 'Trucker babies');
     member.roles.add(role);
-    member.guild.channels.cache.get('576617716023033865').send("Welcome," + member.user.username + "to casey's discord server! Make sure to check out his socials by typing in #bot-commands !socials");
-        });
-
+    });
+    client.on('guildMemberAdd', member => {
+    member.guild.channels.cache.get('576617716023033865').send("Welcome, <@${member.user.id}> to casey's discord server! Make sure to check out his socials by typing in #bot-commands !socials");
+    });
 client.once('ready', () => {
     console.log('Casey Bot is online!');
 });
