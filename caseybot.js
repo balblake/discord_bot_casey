@@ -107,5 +107,5 @@ client.on('message', message =>{
 
 // Keep this at the bottom
 client.on('ready', () =>{
-    client.user.setActivity('!commands', { type: 'WATCHING'}).catch(console.error)
+    client.user.setActivity('!commands :)', { type: 'WATCHING'}).catch(console.error)
 }) // for the type: PLAYING WATCHING LISTENING STREAMING
