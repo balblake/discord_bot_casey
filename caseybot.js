@@ -51,7 +51,6 @@ client.on('guildMemberAdd', member => {
     
 client.once('ready', () => {
     console.log('Casey Bot is online!');
-    giveaway(client)
     memberCount(client)
 });
 
