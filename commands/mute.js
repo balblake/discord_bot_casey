@@ -7,8 +7,8 @@ module.exports = {
             var person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
             if(!person) return  message.reply("I CANT FIND THE USER " + person)
  
-            var role = member.guild.roles.cache.find(role => role.name === 'Trucker babies');
-            var role2 = member.guild.roles.cache.find(role => role.name === '⛔Muted⛔');
+            var role = guildMember.roles.cache.get(role => role.name === 'Trucker babies');
+            var role2 = guildMember.roles.cache.get(role => role.name === '⛔Muted⛔');
             person.roles.add(role2);
             person.roles.remove(role);
            
