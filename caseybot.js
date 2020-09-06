@@ -74,8 +74,8 @@ client.on('message', message => {
                 return message.reply("You didnt specify a time!");
             }
  
-            Member.roles.add(mainrole.id)
-            Member.roles.remove(role.id);
+            member.roles.add(mainrole.id)
+            member.roles.remove(role.id);
  
  
             message.channel.send(`@${person.user.tag} has now been muted for ${ms(ms(time))}`)
