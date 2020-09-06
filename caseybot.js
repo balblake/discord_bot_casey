@@ -59,8 +59,8 @@ client.on('message', message => {
  
     switch (args[0]) {
         case 'mute':
-            var person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
-            if(!person) return  message.reply("I CANT FIND THE USER " + person)
+            var member  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
+            if(!member) return  message.reply("I CANT FIND THE USER " + member)
  
             let mainrole = message.guild.roles.cache.find(role => role.name === "Trucker babies");
             let role = message.guild.roles.cache.find(role => role.name === "⛔Muted⛔");
@@ -74,8 +74,8 @@ client.on('message', message => {
                 return message.reply("You didnt specify a time!");
             }
  
-            person.removeRole(mainrole.id)
-            person.addRole(role.id);
+            member.removeRole(mainrole.id)
+            member.addRole(role.id);
  
  
             message.channel.send(`@${person.user.tag} has now been muted for ${ms(ms(time))}`)
