@@ -18,7 +18,6 @@ module.exports = {
             if(!role2) return message.reply("Couldn't find the trucker baby role.")
 
 
-
     } else {
         message.channel.send('Nice try command is only for mods!');
     }

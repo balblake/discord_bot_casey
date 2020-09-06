@@ -13,21 +13,10 @@ module.exports = {
             member.roles.remove(role);
             message.delete();
 
+            message.channel.send(`${member} has been muted.`)
+
             if(!role2) return message.reply("Couldn't find the mute role.")
 
-            let time = args[2];
-            if(!time){
-                return message.reply("You didnt specify a time!");
-            }
-
-            message.channel.send(`${member} has been muted for` + args[2] +`.`)
-
-            setTimeout(function(){
-                
-                member.roles.add(role)
-                member.roles.remove(role2);
-                message.channel.send(`${member} has been unmuted.`)
-            }, ms(time));
 
     } else {
         message.channel.send('Nice try command is only for mods!');
