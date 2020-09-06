@@ -62,8 +62,8 @@ client.on('message', message => {
             var person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
             if(!person) return  message.reply("I CANT FIND THE USER " + person)
  
-            let mainrole = message.guild.roles.find(role => role.name === "Trucker babies");
-            let role = message.guild.roles.find(role => role.name === "⛔Muted⛔");
+            let mainrole = message.guild.roles.cache.find(role => role.name === "Trucker babies");
+            let role = message.guild.roles.cache.find(role => role.name === "⛔Muted⛔");
            
  
             if(!role) return message.reply("Couldn't find the mute role.")
