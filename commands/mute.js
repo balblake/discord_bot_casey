@@ -14,10 +14,8 @@ module.exports = {
             message.delete();
 
             message.channel.send(`${member} has been muted.`)
-            message.delete(5000)
- 
-            if(!role2) return message.reply("Couldn't find the mute role.")
 
+            if(!role2) return message.reply("Couldn't find the mute role.")
 
 
     } else {
