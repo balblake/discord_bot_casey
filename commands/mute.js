@@ -32,7 +32,6 @@ module.exports = {
     } else {
         message.channel.send('Nice try command is only for mods!');
     }
-    break;
 
     }
 } 
