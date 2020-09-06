@@ -79,7 +79,7 @@ client.on('message', message => {
             member.roles.remove(role => role.name === "Trucker babies");
  
  
-            message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`)
+            message.channel.send(`@${member.user} has now been muted for ${ms(ms(time))}`)
  
             setTimeout(function(){
                 
