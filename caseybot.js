@@ -1,5 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
+const config = require('./token.json');
+const memberCount = require('./member-count')
+
+client.login(config.token);
  
 const prefix = '!';
  
@@ -13,10 +18,40 @@ for(const file of commandFiles){
 
     client.commands.set(command.name, command);
 }
- 
- 
+
+client.on('guildMemberAdd', member => {
+    console.log('User ' + member.user.username + ' has joined the server!');
+    var role = member.guild.roles.cache.find(role => role.name === 'Trucker babies');
+    member.roles.add(role);
+    });
+    client.on('guildMemberAdd', member => {
+    const targetChannelId = '707989016078843914'
+    member.guild.channels.cache.get('576617716023033865').send(`Welcome, **${member}** to casey's discord server!\nMake sure to check out his socials by going to ${member.guild.channels.cache.get(targetChannelId).toString()} and typing !socials`);
+    });
+
+    client.on('message', message => {
+        if(message.member.roles.cache.has('386344247843880960')){
+        if (message.content.startsWith("!message")) {
+            // Get the channel mention
+            if (message.mentions.channels.size == 0) {
+                message.reply("please mention a channel first.");
+            }
+            else {
+                let targetChannel = message.mentions.channels.first();
+                // Get the message to print
+
+                const args = message.content.split(" ").slice(2);
+                let saytext = args.join(" ");
+                targetChannel.send(saytext);
+                message.delete();
+            }
+            }
+        }
+      });
+    
 client.once('ready', () => {
     console.log('Casey Bot is online!');
+    memberCount(client)
 });
 
 bot.on('message', message => {
@@ -106,12 +141,13 @@ client.on('message', message =>{
     if(command === 'mcommands'){
         client.commands.get('mcommands').execute(message, args);
        } 
+    if(command === 'socials'){
+        client.commands.get('socials').execute(message, args);
+        } 
 })
 
 
 // Keep this at the bottom
 client.on('ready', () =>{
-    client.user.setActivity('!commands', { type: 'WATCHING'}).catch(console.error)
+    client.user.setActivity('!commands :)', { type: 'WATCHING'}).catch(console.error)
 }) // for the type: PLAYING WATCHING LISTENING STREAMING
- 
-client.login('NzQ5MDE0MTA2MDk0NDM2NDIz.X0lzvg._SxtVM1smJRmnv9DbBuGVJFYI_E');
