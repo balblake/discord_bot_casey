@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'mute',
-    description: "mute",
+    name: 'unmute',
+    description: "unmute",
     execute(message, args, member){
 
         if(message.member.roles.cache.has('386344247843880960')){
@@ -9,11 +9,11 @@ module.exports = {
  
             var role = member.guild.roles.cache.find(role => role.name === 'Trucker babies');
             var role2 = member.guild.roles.cache.find(role => role.name === '⛔Muted⛔');
-            member.roles.add(role2);
-            member.roles.remove(role);
+            member.roles.add(role);
+            member.roles.remove(role2);
            
  
-            if(!role2) return message.reply("Couldn't find the mute role.")
+            if(!role2) return message.reply("Couldn't find the trucker baby role.")
 
 
 
