@@ -9,11 +9,6 @@ module.exports = {
  
             person.roles.add(role => role.name === '⛔Muted⛔');
             person.roles.remove(role => role.name === 'Trucker babies');
-           
- 
-            if(!role) return message.reply("Couldn't find the mute role.")
-
-
 
     } else {
         message.channel.send('Nice try command is only for mods!');
