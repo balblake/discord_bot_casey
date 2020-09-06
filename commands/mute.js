@@ -11,7 +11,7 @@ module.exports = {
             var role2 = member.guild.roles.cache.find(role => role.name === '⛔Muted⛔');
             member.roles.add(role2);
             member.roles.remove(role);
-           
+            message.delete();
  
             if(!role2) return message.reply("Couldn't find the mute role.")
 
