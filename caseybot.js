@@ -78,14 +78,14 @@ client.on('message', message => {
             member.roles.remove(role.id);
  
  
-            message.channel.send(`@${person.user.tag} has now been muted for ${ms(ms(time))}`)
+            message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`)
  
             setTimeout(function(){
                 
-                person.roles.add(mainrole.id)
-                person.roles.remove(role.id);
+                member.roles.add(mainrole.id)
+                member.roles.remove(role.id);
                 console.log(role.id)
-                message.channel.send(`@${person.user.tag} has been unmuted.`)
+                message.channel.send(`@${member.user.tag} has been unmuted.`)
             }, ms(time));
  
  
