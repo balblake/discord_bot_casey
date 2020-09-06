@@ -11,7 +11,9 @@ module.exports = {
             var role2 = member.guild.roles.cache.find(role => role.name === '⛔Muted⛔');
             member.roles.add(role);
             member.roles.remove(role2);
-           
+            message.delete();
+
+            message.channel.sent('@${member.user.tag} has been unmuted.')
  
             if(!role2) return message.reply("Couldn't find the trucker baby role.")
 

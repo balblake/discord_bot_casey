@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args){
 
         if(message.member.roles.cache.has('386344247843880960')){
-        message.channel.send('!kick (name), !ban (name), !clear (1-99), !mute (name) (1s,1m,1h,1d)');
+        message.channel.send('!kick (name), !ban (name), !clear (1-99), !mute (name), !unmute (name)');
 
 
 
