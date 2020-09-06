@@ -1,10 +1,10 @@
 module.exports = {
-    name: 'mute',
-    description: "mute",
+    name: 'timer',
+    description: "timer",
     execute(message, args, member){
  
         switch (args[0]) {
-            case 'mute':
+            case 'timer':
         if(message.member.roles.cache.has('386344247843880960')){
             var member  = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[1]));
             if(!member) return  message.reply("I CANT FIND THE USER " + member)

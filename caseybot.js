@@ -105,13 +105,13 @@ client.on('message', message =>{
         client.commands.get('socials').execute(message, args);
         } 
     if(command === 'mute'){
-        client.commands.get('mute').execute(message, args);
+        client.commands.get('mute').execute(message, args, member);
         }     
     if(command === 'unmute'){
-       client.commands.get('unmute').execute(message, args);
+       client.commands.get('unmute').execute(message, args, member);
        } 
     if(command === 'timer'){
-    client.commands.get('timer').execute(message, args);
+    client.commands.get('timer').execute(message, args, member);
     } 
 })
 
