@@ -82,8 +82,8 @@ client.on('message', message => {
  
             setTimeout(function(){
                 
-                person.addRole(mainrole.id)
-                person.removeRole(role.id);
+                person.roles.add(mainrole.id)
+                person.roles.remove(role.id);
                 console.log(role.id)
                 message.channel.send(`@${person.user.tag} has been unmuted.`)
             }, ms(time));
