@@ -54,49 +54,6 @@ client.once('ready', () => {
     memberCount(client)
 });
 
-client.on('message', message => {
-    let args = message.content.substring(prefix.length).split(" ");
- 
-    switch (args[0]) {
-        case 'mute':
-            if(message.member.roles.cache.has('386344247843880960')){
-            var member  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
-            if(!member) return  message.reply("I CANT FIND THE USER " + member)
- 
-            let mainrole = message.guild.roles.cache.find(role => role.name === "Trucker babies");
-            let role = message.guild.roles.cache.find(role => role.name === "⛔Muted⛔");
-           
- 
-            if(!role) return message.reply("Couldn't find the mute role.")
- 
- 
-            let time = args[2];
-            if(!time){
-                return message.reply("You didnt specify a time!");
-            }
- 
-            member.roles.add(role => role.name === "⛔Muted⛔")
-            member.roles.remove(role => role.name === "Trucker babies");
- 
- 
-            message.channel.send(`@${member.user} has now been muted for ${ms(ms(time))}`)
- 
-            setTimeout(function(){
-                
-                member.roles.add(role => role.name === "Trucker babies")
-                member.roles.remove(role => role.name === "⛔Muted⛔");
-                console.log(role.id)
-                message.channel.send(`@${member.user.tag} has been unmuted.`)
-            }, ms(time));
- 
- 
-    
-        break;
-    }
- 
-}
-});
-
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
@@ -145,9 +102,6 @@ client.on('message', message =>{
     if(command === 'socials'){
         client.commands.get('socials').execute(message, args);
         } 
-    if(command === 'mute'){
-        client.commands.get('mute').execute(message, args);
-    }
 })
 
 
