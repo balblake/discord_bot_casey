@@ -1,9 +1,7 @@
 module.exports = {
     name: 'mute',
     description: "mute",
-    execute(message, args){
-
-        let args = message.content.substring(PREFIX.length).split(" ");
+    execute(message, args, member){
  
         switch (args[0]) {
             case 'mute':
