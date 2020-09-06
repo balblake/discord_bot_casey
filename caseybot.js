@@ -59,6 +59,7 @@ client.on('message', message => {
  
     switch (args[0]) {
         case 'mute':
+            if(message.member.roles.cache.has('386344247843880960')){
             var member  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
             if(!member) return  message.reply("I CANT FIND THE USER " + member)
  
@@ -74,16 +75,16 @@ client.on('message', message => {
                 return message.reply("You didnt specify a time!");
             }
  
-            member.roles.add(mainrole.id)
-            member.roles.remove(role.id);
+            member.roles.add(role => role.name === "⛔Muted⛔")
+            member.roles.remove(role => role.name === "Trucker babies");
  
  
             message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`)
  
             setTimeout(function(){
                 
-                member.roles.add(mainrole.id)
-                member.roles.remove(role.id);
+                member.roles.add(role => role.name === "Trucker babies")
+                member.roles.remove(role => role.name === "⛔Muted⛔");
                 console.log(role.id)
                 message.channel.send(`@${member.user.tag} has been unmuted.`)
             }, ms(time));
@@ -93,7 +94,7 @@ client.on('message', message => {
         break;
     }
  
- 
+}
 });
 
 client.on('message', message =>{
