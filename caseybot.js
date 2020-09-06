@@ -111,7 +111,7 @@ client.on('message', message =>{
        client.commands.get('unmute').execute(message, args, member);
        } 
     if(command === 'timer'){
-    client.commands.get('timer').execute(message, args, member);
+    client.commands.get('timer').execute(message, args,);
     } 
 })
 
