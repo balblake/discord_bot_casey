@@ -54,6 +54,8 @@ client.once('ready', () => {
     memberCount(client)
 });
 
+
+
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
@@ -101,6 +103,9 @@ client.on('message', message =>{
        } 
     if(command === 'socials'){
         client.commands.get('socials').execute(message, args);
+        } 
+    if(command === 'mute'){
+        client.commands.get('mute').execute(message, args);
         } 
 })
 
