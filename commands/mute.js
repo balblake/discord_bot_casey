@@ -13,7 +13,7 @@ module.exports = {
             member.roles.remove(role);
             message.delete();
 
-            message.channel.send('@${member.user.tag} has been muted.')
+            message.channel.send('${member} has been muted.')
  
             if(!role2) return message.reply("Couldn't find the mute role.")
 
