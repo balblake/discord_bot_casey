@@ -2,7 +2,6 @@ module.exports = {
     name: 'message',
     description: "send a message through the bot",
     execute(message, args){
-        message.delete();
 
 if(message.member.roles.cache.has('386344247843880960')){
     if (message.content.startsWith("!message")) {
