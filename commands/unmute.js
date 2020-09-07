@@ -13,7 +13,7 @@ module.exports = {
             member.roles.remove(role2);
             message.delete();
 
-            message.channel.send(`${member}  has been unmuted.`)
+            message.channel.send(`${member} has been unmuted.`)
  
             if(!role2) return message.reply("Couldn't find the trucker baby role.")
 
