@@ -81,7 +81,7 @@ client.on('message', message =>{
        client.commands.get('unmute').execute(message, args, member);
        } 
     if(command === 'message'){
-    client.commands.get('message').execute(message, args,);
+    client.commands.get('message').execute(message, args);
     } 
 })
 
