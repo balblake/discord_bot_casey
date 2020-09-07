@@ -54,8 +54,6 @@ client.once('ready', () => {
     memberCount(client)
 });
 
-
-
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
