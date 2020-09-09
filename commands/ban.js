@@ -3,12 +3,13 @@ module.exports = {
     description: "bans user",
     execute(message, args){
         if(message.member.roles.cache.has('386344247843880960')){
-            const userBan = message.mentions.users.first();
+            const userBan = args.slice(1).join(' ');
 
             if (userBan) {
                 var member = message.guild.member(userBan)
                 let reason = args.slice(2).join(' ');
                 if(member) 
+                
                         member.ban(reason)
                     .then(() => {
                         message.reply(`${userBan.tag} was banned from the server.`);
