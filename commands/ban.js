@@ -2,31 +2,16 @@ module.exports = {
     name: 'ban',
     description: "bans user",
     execute(message, args){
-        if(message.member.roles.cache.has('386344247843880960')){
-            const userBan = message.mentions.users.first();
+        message.delete();
 
-            if (userBan) {
-                var member = message.guild.member(userBan)
-
-                if(member) {
-                    member.ban({
-                        reason: 'you broke the rules!'
-                    }).then(() => {
-                        message.reply(`${userBan.tag} was banned from the server.`)
-                    })
-                } else {
-                    message.reply('user is not in server');
-                }
-            } else {
-                message.reply('you need to sate the user you want to ban')
-            }
-
-
-        } else {
-            message.reply('Nice try! This is only for staff!');
-        }
-
-
-
-    }
-}
+if(message.member.roles.cache.has('746939181909016696')){;
+    const member = message.mentions.members.first(); // keep in mind it isn't the best practice to use message.mentions to retrieve an argument
+    if (!member) return message.channel.send('no member mentioned');
+    let reason = args.slice(2).join(' '); // arguments should already be defined
+    member.ban(reason)
+    .then(message.channel.send(`${userKick.tag} was banned from the server.`))
+    .catch(err => {
+      message.channel.send('something went wrong');
+      console.error();
+    });
+  }}}
