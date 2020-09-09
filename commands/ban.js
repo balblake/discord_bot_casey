@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args){
         if(message.member.roles.cache.has('386344247843880960')){
             const userBan = message.mentions.users.first();
-            const reason = message.args[1]();
+            const reason = message.args[2]();
             if (userBan) {
                 var member = message.guild.member(userBan)
                 
