@@ -14,9 +14,7 @@ module.exports = {
                     member.ban(reason)
                 .then(() => {
                         message.reply(`${userBan.tag} was banned from the server.`)
-                        .catch(err => {
-                            message.channel.send('Something went wrong.')
-                        });
+                        
                     })
                 } else {
                     message.reply('Send a reason or the user is not in the server.');
