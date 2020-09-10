@@ -1,11 +1,10 @@
 module.exports = {
     name: 'ban',
     description: "bans user",
-    execute(message, args){
+    execute(message, args,){
         if(message.member.roles.cache.has('386344247843880960')){
             const userBan = message.mentions.users.first();
-            const args = message.content.split(" ").slice(2)
-            let reason = args.join(" ")
+            const reason = message.content.split(" ").slice(2)
 
             if (userBan) {
                 var member = message.guild.member(userBan)
