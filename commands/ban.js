@@ -4,18 +4,22 @@ module.exports = {
     execute(message, args){
         if(message.member.roles.cache.has('386344247843880960')){
             const userBan = message.mentions.users.first();
+            const args = message.content.split(" ").slice(2)
+            let reason = args.join(" ")
 
             if (userBan) {
                 var member = message.guild.member(userBan)
 
                 if(member) {
-                    member.ban({
-                        reason: 'you broke the rules!'
-                    }).then(() => {
+                    member.ban(reason)
+                .then(() => {
                         message.reply(`${userBan.tag} was banned from the server.`)
+                        .catch(err => {
+                            message.channel.send('Something went wrong.')
+                        });
                     })
                 } else {
-                    message.reply('user is not in server');
+                    message.reply('Send a reason or the user is not in the server.');
                 }
             } else {
                 message.reply('you need to sate the user you want to ban')
