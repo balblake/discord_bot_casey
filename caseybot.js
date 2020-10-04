@@ -86,11 +86,11 @@ client.on('message', async message => {
                 let reaction = await gchannel.send(gembed)
                 reaction.react("🎉")
                 setTimeout(() => {
-                    if (message.reaction.cache.get("🎉").count <= 1) {
+                    if (message.reaction.cache.find("🎉").count <= 1) {
                         return message.channel.send("Not enough people reacted for me to draw a winner!")
                     }
 
-                    let winner = m.reactions.cache.get("🎉").users.cache.filter((u) => !u.client).random();
+                    let winner = message.reactions.cache.find("🎉").users.cache.filter((u) => !u.client).random();
                     gchannel.send(`Congratulations ${winner}! You just won the **${prize}**!`
                     );
                 }, ms(args[1]));
