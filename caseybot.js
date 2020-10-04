@@ -44,7 +44,7 @@ client.on("message", async message => {
         let embedPoll = new Discord.MessageEmbed()
         .setTitle('')
         .setDescription(pollDescription)
-        .setColor('ORANGE')
+        .setColor('LIGHT_BLUE')
         let msgEmbed = await pollChannel.send(embedPoll);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
@@ -52,7 +52,6 @@ client.on("message", async message => {
     }
 
 })
-
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
