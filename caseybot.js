@@ -54,6 +54,48 @@ client.on("message", async message => {
 
 })
 
+client.on('message', async message => {
+    let args = message.content.substring(prefix.length).split(" ")
+
+    if (message.content.startsWith(`${prefix}giveaway`)) {
+        let time = args[1]
+        if (!time) return message.channel.send('You did not specify your time!');
+
+        if (
+            !args[1].endsWith("d") &&
+            !args[1].endsWith("h") &&
+            !args[1].endsWith("m") &&
+            !args[1].endsWith("s") 
+        )
+            return message.channel.send("You need to use d (days), h (hours), m (minutes), s (seconds)")
+
+            let gchannel = message.mentions.channels.first();
+            if (!gchannel) return message.channel.send("I can\'t find that channel in the server!")
+
+            let prize = args.slice(3).join(" ")
+            if (!prize) return message.channel.send(" You have to say what you want the prize to be!")
+
+            message.delete()
+            gchannel.send(":tada: **NEW GIVEAWAY!** :tada: ")
+            let gembed = new Discord.MessageEmbed
+                .setTitle('New Giveaway!')
+                .setColor('GREEN')
+                .setDescription(`React with :tada: to enter the giveaway!\nHosted by: **${message.author}**\nTime: **${time}`)
+                setFooter('Will end at')
+                let reaction = await gchannel.send(gembed)
+                reaction.react("🎉")
+                setTimeout(() => {
+                    if (message.reactions.cache.get("🎉").count <= 1) {
+                        return message.channel.send("Not enough people reacted for me to draw a winner!")
+                    }
+
+                    let winner = m.reactions.cache.get("🎉").users.cache.filter((u) => !u.client).random();
+                    gchannel.send(`Congratulations ${winner}! You just won the **${prize}**!`
+                    );
+                }, ms(args[1]));
+    }
+})
+
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
  
