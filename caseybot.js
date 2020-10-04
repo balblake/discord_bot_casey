@@ -84,9 +84,11 @@ client.on('message', async message => {
                 .setTimestamp(Date.now + ms(args[1]))
                 .setFooter(`Will end in ${time}`)
                 let reaction = await gchannel.send(gembed)
+                const reactions = message.reactions.cache.get("🎉");
                 reaction.react("🎉")
+
                 setTimeout(() => {
-                    if (message.reaction.cache.find("🎉").count <= 1) {
+                    if (reactions.count <= 1) {
                         return message.channel.send("Not enough people reacted for me to draw a winner!")
                     }
 
