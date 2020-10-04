@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const config = require('./token.json');
 const memberCount = require('./member-count')
 const welcome = require('./welcome')
+const roleReactions = require('./role-reactions')
 
 client.login(config.token);
  
@@ -19,12 +20,39 @@ for(const file of commandFiles){
 
     client.commands.set(command.name, command);
 }
+
     
 client.once('ready', () => {
     console.log('Casey Bot is online!');
     memberCount(client)
     welcome(client)
+    roleReactions(client)
 });
+
+client.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+
+    const messageArray = message.content.split(' ');
+	const cmd = messageArray[0];
+	const args = messageArray.slice(1);
+
+    if (cmd === '!poll'){
+        let pollChannel = message.mentions.channels.first();
+        let pollDescription = args.slice(1).join(' ');
+        message.delete();
+
+        let embedPoll = new Discord.MessageEmbed()
+        .setTitle('')
+        .setDescription(pollDescription)
+        .setColor('ORANGE')
+        let msgEmbed = await pollChannel.send(embedPoll);
+        await msgEmbed.react('👍')
+        await msgEmbed.react('👎')
+    
+    }
+
+})
+
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -75,10 +103,10 @@ client.on('message', message =>{
         client.commands.get('socials').execute(message, args);
         } 
     if(command === 'mute'){
-        client.commands.get('mute').execute(message, args, member);
+        client.commands.get('mute').execute(message, args);
         }     
     if(command === 'unmute'){
-       client.commands.get('unmute').execute(message, args, member);
+       client.commands.get('unmute').execute(message, args);
        } 
     if(command === 'message'){
     client.commands.get('message').execute(message, args);

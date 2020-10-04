@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args) {
 
         if(message.member.roles.cache.has('386344247843880960')){
-        if(!args[0]) return message.reply("How many message would you like to clear?")
+        if(!args[0]) return message.reply("Please say how many messages you want to clear.")
         if(parseInt(args[0]) > 99) return message.reply("You may not delete more than 99 messages!");
 
         message.channel.bulkDelete(parseInt(args[0]) + 1).then(() => {
