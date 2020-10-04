@@ -5,6 +5,7 @@ const config = require('./token.json');
 const memberCount = require('./member-count')
 const welcome = require('./welcome')
 const roleReactions = require('./role-reactions')
+const ms = require('ms')
 
 client.login(config.token);
  
