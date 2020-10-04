@@ -77,7 +77,7 @@ client.on('message', async message => {
 
             message.delete()
             gchannel.send(":tada: **NEW GIVEAWAY!** :tada: ")
-            let gembed = new Discord.MessageEmbed
+            let gembed = new Discord.MessageEmbed()
                 .setTitle('New Giveaway!')
                 .setColor('GREEN')
                 .setDescription(`React with :tada: to enter the giveaway!\nHosted by: **${message.author}**\nTime: **${time}`)
