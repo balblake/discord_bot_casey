@@ -81,7 +81,7 @@ client.on('message', async message => {
                 .setTitle('New Giveaway!')
                 .setColor('GREEN')
                 .setDescription(`React with :tada: to enter the giveaway!\nHosted by: **${message.author}**\nTime: **${time}`)
-                setFooter('Will end at')
+                .setFooter('Will end at')
                 let reaction = await gchannel.send(gembed)
                 reaction.react("🎉")
                 setTimeout(() => {
