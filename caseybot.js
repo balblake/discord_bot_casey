@@ -80,8 +80,8 @@ client.on('message', async message => {
             let gembed = new Discord.MessageEmbed()
                 .setTitle('New Giveaway!')
                 .setColor('GREEN')
-                .setDescription(`React with :tada: to enter the giveaway!\nHosted by: **${message.author}**\nTime: **${time}`)
-                .setFooter('Will end at')
+                .setDescription(`React with :tada: to enter the giveaway!\nHosted by: **${message.author}**\nTime: **${time}\nPrize: **${prize}**`)
+                .setFooter(`Will end in **${time}`)
                 let reaction = await gchannel.send(gembed)
                 reaction.react("🎉")
                 setTimeout(() => {
