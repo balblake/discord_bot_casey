@@ -86,7 +86,7 @@ client.on('message', async message => {
                 let reaction = await gchannel.send(gembed)
                 reaction.react("🎉")
                 setTimeout(() => {
-                    if (message.reactions.cache.get("🎉").find <= 1) {
+                    if (message.reaction.cache.get("🎉").count <= 1) {
                         return message.channel.send("Not enough people reacted for me to draw a winner!")
                     }
 
