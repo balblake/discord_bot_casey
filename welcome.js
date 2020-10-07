@@ -1,4 +1,5 @@
 const { DiscordAPIError, Message } = require("discord.js");
+const discord = require('discord.js')
 
 module.exports = client => {
     client.on('guildMemberAdd', member => {
