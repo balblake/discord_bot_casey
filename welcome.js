@@ -4,7 +4,7 @@ const discord = require('discord.js')
 module.exports = client => {
     client.on('guildMemberAdd', member => {
     console.log('User ' + member.user.username + ' has joined the server!');
-    var role = member.guild.roles.cache.find('386344485761843220');
+    var role = member.guild.roles.cache.find(role => role.name === 'Trucker Babies');
     member.roles.add(role)
     });
     client.on('guildMemberAdd', member => {
