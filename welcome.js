@@ -11,7 +11,7 @@ module.exports = client => {
         const targetChannelId = '763475311114977300'
         const targetChannelID2 = '751503236820893806'
         const embed = new discord.MessageEmbed()
-            .setTitle(`**Welcome to Casey's Discord!**`)
+            .setTitle(`**${member.username}**`)
             .setColor('BLUE')
             .setDescription(`Welcome **${member}**!\nMake sure to read the **${member.guild.channels.cache.get(targetChannelId).toString()}**!\nCheck out Casey's **${member.guild.channels.cache.get(targetChannelID2).toString()}**!`)
 
