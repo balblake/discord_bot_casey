@@ -154,9 +154,6 @@ client.on('message', message =>{
     if(command === 'message'){
     client.commands.get('message').execute(message, args);
     } 
-    if(command === 'embedmessage'){
-        client.commands.get('embedmessage').execute(message, args);
-        } 
 })
 
 
