@@ -22,7 +22,6 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-    
 client.once('ready', () => {
     console.log('Casey Bot is online!');
     memberCount(client)
@@ -37,6 +36,7 @@ client.on("message", async message => {
 	const cmd = messageArray[0];
 	const args = messageArray.slice(1);
 
+    if(message.member.roles.cache.has('386344247843880960')){
     if (cmd === '!poll'){
         let pollChannel = message.mentions.channels.first();
         let pollDescription = args.slice(1).join(' ');
@@ -50,7 +50,7 @@ client.on("message", async message => {
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
     
-    }
+    }}
 
 })
 
@@ -154,6 +154,9 @@ client.on('message', message =>{
     if(command === 'message'){
     client.commands.get('message').execute(message, args);
     } 
+    if(command === 'embedmessage'){
+        client.commands.get('embedmessage').execute(message, args);
+        } 
 })
 
 
