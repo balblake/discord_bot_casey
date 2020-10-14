@@ -1,6 +1,7 @@
 const { DiscordAPIError, Message } = require("discord.js");
 const discord = require('discord.js')
 
+
 module.exports = client => {
     client.on('guildMemberAdd', member => {
     console.log('User ' + member.user.username + ' has joined the server!');
@@ -12,6 +13,8 @@ module.exports = client => {
         const targetChannelID2 = '751503236820893806'
         const embed = new discord.MessageEmbed()
             .setTitle(`**Welcome to Casey's Discord!**`)
+            .setFooter('If you don’t follow any of these rules you will first be muted, then kicked, and then banned.')
+            .setTimestamp(message.createdAt)
             .setColor('BLUE')
             .setDescription(`Welcome **${member}**!\nMake sure to read the **${member.guild.channels.cache.get(targetChannelId).toString()}**!\nCheck out Casey's **${member.guild.channels.cache.get(targetChannelID2).toString()}**!`)
 
