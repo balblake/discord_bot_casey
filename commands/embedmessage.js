@@ -19,9 +19,9 @@ if(message.member.roles.cache.has('386344247843880960')){
             const args1 = message.content.split(" ").slice(3);
             const embed = new discord.MessageEmbed()
             .setColor('BLUE')
-            .setTitle(args)
+            .setTitle('CrazyCasey')
             .setDescription(args1)
-            .setTimestamp('')
+            .setTimestamp()
             targetChannel.send(embed);
             message.delete();
 
