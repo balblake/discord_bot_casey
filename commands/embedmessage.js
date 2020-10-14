@@ -19,7 +19,7 @@ if(message.member.roles.cache.has('386344247843880960')){
             let saytext = args.join(" ");
             const embed = new discord.MessageEmbed()
             .setColor('BLUE')
-            .setTitle('CrazyCasey')
+            .setTitle()
             .setDescription(saytext)
             .setTimestamp()
             targetChannel.send(embed);
