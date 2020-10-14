@@ -1,3 +1,5 @@
+const discord = require('discord.js')
+
 module.exports = {
     name: 'embedmessage',
     description: "send a message through the bot",
@@ -14,7 +16,7 @@ if(message.member.roles.cache.has('386344247843880960')){
             // Get the message to print
 
             const args = message.content.split(" ").slice(2);
-            const embed = new Discord.MessageEmbed()
+            const embed = new discord.MessageEmbed()
             .setColor('BLUE')
             .setTitle('CrazyCasey')
             .setDescription(args)
