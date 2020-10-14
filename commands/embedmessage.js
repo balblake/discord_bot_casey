@@ -15,11 +15,12 @@ if(message.member.roles.cache.has('386344247843880960')){
             let targetChannel = message.mentions.channels.first();
             // Get the message to print
             
-            const args1 = message.content.split(" ").slice(2);
+            const args = message.content.split(" ").slice(2);
+            let saytext = args.join(" ");
             const embed = new discord.MessageEmbed()
             .setColor('BLUE')
             .setTitle('CrazyCasey')
-            .setDescription(args1)
+            .setDescription(saytext)
             .setTimestamp()
             targetChannel.send(embed);
             message.delete();
