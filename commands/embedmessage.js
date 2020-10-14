@@ -21,7 +21,7 @@ if(message.member.roles.cache.has('386344247843880960')){
             .setColor('BLUE')
             .setTitle("")
             .setDescription(saytext)
-            .setTimestamp()
+            .setTimestamp("2015-12-31T12:00:00.000Z")
             targetChannel.send(embed);
             message.delete();
 
