@@ -20,8 +20,8 @@ if(message.member.roles.cache.has('386344247843880960')){
             const embed = new discord.MessageEmbed()
             .setColor('BLUE')
             .setTitle('Server Rules')
+            .setFooter('If you don’t follow any of these rules you will first be muted, then kicked, and then banned.')
             .setDescription(saytext)
-            .setTimestamp()
             targetChannel.send(embed);
             message.delete();
 

@@ -11,12 +11,12 @@ module.exports = client => {
     client.on('guildMemberAdd', member => {
         const targetChannelId = '763475311114977300'
         const targetChannelID2 = '751503236820893806'
+        const targetChannelID3 = '707989016078843914'
         const embed = new discord.MessageEmbed()
             .setTitle(`**Welcome to Casey's Discord!**`)
-            .setFooter('If you don’t follow any of these rules you will first be muted, then kicked, and then banned.')
             .setTimestamp()
             .setColor('BLUE')
-            .setDescription(`Welcome **${member}**!\nMake sure to read the **${member.guild.channels.cache.get(targetChannelId).toString()}**!\nCheck out Casey's **${member.guild.channels.cache.get(targetChannelID2).toString()}**!`)
+            .setDescription(`Welcome **${member}**!\nMake sure to read the **${member.guild.channels.cache.get(targetChannelId).toString()}!**\nCheck out Casey's **${member.guild.channels.cache.get(targetChannelID2).toString()}!**\nDo !commands in **${member.guild.channels.cache.get(targetChannelID3).toString()} to see the commands!**`)
 
             member.guild.channels.cache.get('576617716023033865').send(embed);
     })}
