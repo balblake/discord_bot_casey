@@ -1,7 +1,4 @@
 const discord = require('discord.js')
-const d = new Date( timestamp );
-date = d.toDateString();
-console.log( date );
 
 module.exports = {
     name: 'embedmessage',
@@ -24,7 +21,7 @@ if(message.member.roles.cache.has('386344247843880960')){
             .setColor('BLUE')
             .setTitle("")
             .setDescription(saytext)
-            .setTimestamp(d)
+            .setTimestamp(createdTimestamp)
             targetChannel.send(embed);
             message.delete();
 
