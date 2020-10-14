@@ -15,7 +15,7 @@ if(message.member.roles.cache.has('386344247843880960')){
             let targetChannel = message.mentions.channels.first();
             // Get the message to print
 
-            const args1 = message.content(" ").slice(2);
+            const args1 = message.content(" ").slice(40000);
             const embed = new discord.MessageEmbed()
             .setColor('BLUE')
             .setTitle('Server Rules')
