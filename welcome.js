@@ -16,7 +16,8 @@ module.exports = client => {
             .setTitle(`**Welcome to Casey's Discord!**`)
             .setTimestamp()
             .setColor('BLUE')
-            .setDescription(`Welcome **${member}!**\nMake sure to read the **${member.guild.channels.cache.get(targetChannelId).toString()}!**\nCheck out Casey's **${member.guild.channels.cache.get(targetChannelID2).toString()}!**\nDo !commands in **${member.guild.channels.cache.get(targetChannelID3).toString()}** to see the commands**!**`)
+            .setFooter('Have a good time!')
+            .setDescription(`Welcome **${member}**!\nMake sure to read the **${member.guild.channels.cache.get(targetChannelId).toString()}**!\nCheck out Casey's **${member.guild.channels.cache.get(targetChannelID2).toString()}**!\nDo !commands in **${member.guild.channels.cache.get(targetChannelID3).toString()}** to see the commands!`)
 
             member.guild.channels.cache.get('576617716023033865').send(embed);
     })}
