@@ -7,7 +7,7 @@ module.exports = {
 
 if(message.member.roles.cache.has('386344247843880960')){
     if (message.content.startsWith("!rules")) {
-        let targetChannelId = '763475311114977300'
+        targetChannel = client.channels.cache.get('763475311114977300');
 
             const args = message.content.split(" ").slice(1);
             let saytext = args.join(" ");
@@ -17,7 +17,7 @@ if(message.member.roles.cache.has('386344247843880960')){
             .setTimestamp()
             .setFooter('If you don’t follow any of these rules you will first be muted, then kicked, and then banned.')
             .setDescription(saytext)
-            targetChannelId.send(embed);
+            targetChannel.send(embed);
             message.delete();
 
         }
