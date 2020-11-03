@@ -7,9 +7,10 @@ module.exports = {
 message.delete();
 const embed = new discord.MessageEmbed()
 .setColor('BLUE')
-.setTitle('Here are the commands.')
+.setTitle('Here are all the commands.')
 .setTimestamp()
-.setFooter(':caseythumbsup:')
+.setFooter('Have a nice day!')
+.setImage('https://i.imgur.com/k6Gp1Gw.jpg')
 .setDescription(`!socials - See all Casey's socials\n!twitch - Casey's Twitch Channel\n!youtube/!yt - Casey's YouTube Channel\n!tiktok - Casey's TikTok Page\n!instagram/!ig/!insta - Casey's Instagram Page`)
 message.channel.send(embed)
 }}
