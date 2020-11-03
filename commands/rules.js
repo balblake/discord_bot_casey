@@ -7,7 +7,7 @@ module.exports = {
 
 if(message.member.roles.cache.has('386344247843880960')){
     if (message.content.startsWith("!rules")) {
-        targetChannel = client.channels.cache.get('763475311114977300');
+        channel = client.channels.cache.get('763475311114977300');
 
             const args = message.content.split(" ").slice(1);
             let saytext = args.join(" ");
