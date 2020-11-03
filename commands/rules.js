@@ -7,9 +7,15 @@ module.exports = {
 
 if(message.member.roles.cache.has('386344247843880960')){
     if (message.content.startsWith("!rules")) {
-        channel = client.channels.cache.get('763475311114977300');
+        // Get the channel mention
+        if (message.mentions.channels.size == 0) {
+            message.reply("please mention a channel first.");
+        }
+        else {
+            let targetChannel = message.mentions.channels.first();
+            // Get the message to print
 
-            const args = message.content.split(" ").slice(1);
+            const args = message.content.split(" ").slice(2);
             let saytext = args.join(" ");
             const embed = new discord.MessageEmbed()
             .setColor('BLUE')
@@ -23,4 +29,4 @@ if(message.member.roles.cache.has('386344247843880960')){
         }
         }
     }
-};
+}};
