@@ -1,3 +1,5 @@
+const discord = require('discord.js')
+
 module.exports = {
     name: 'commands',
     description: "All the commands",
