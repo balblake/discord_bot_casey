@@ -7,8 +7,6 @@ module.exports = client => {
     console.log('User ' + member.user.username + ' has joined the server. :)');
     var role = member.guild.roles.cache.find(role => role.name === 'Trucker Babies');
     member.roles.add(role)
-    });
-    client.on('guildMemberAdd', member => {
         const targetChannelId = '763475311114977300'
         const targetChannelID2 = '751503236820893806'
         const targetChannelID3 = '707989016078843914'
