@@ -6,7 +6,7 @@ const memberCount = require('./member-count')
 const welcome = require('./welcome')
 const roleReactions = require('./role-reactions')
 const ms = require('ms')
-
+const messageLogs = require('./messagelogs')
 
 client.login(config.token);
  
@@ -28,7 +28,7 @@ client.once('ready', () => {
     memberCount(client)
     welcome(client)
     roleReactions(client)
-    
+    messageLogs(client)
 });
 
 client.on("message", async message => {
