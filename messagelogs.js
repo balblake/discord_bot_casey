@@ -6,7 +6,7 @@ module.exports = (client) => {
     client.on('message', (message) => {
         const { guild, content, member } = message
 
-        const hasRole = member.role.cache.find((role) => {
+        const hasRole = member.roles.cache.has((role) => {
             return roles.includes(role.name)
         })
 
