@@ -1,4 +1,5 @@
 const discord = require('discord.js')
+const guild = client.guilds.cache.get("386343658514939915");
 
 module.exports = {
     name: 'rules',

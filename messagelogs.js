@@ -1,5 +1,5 @@
 const roles = ['Trucker Babies']
-
+const guild = client.guilds.cache.get("386343658514939915");
 
 module.exports = (client) => {
     const channelId = '769796468055474206'
@@ -7,7 +7,7 @@ module.exports = (client) => {
     client.on('message', (message) => {
         const { guild, content, member } = message
 
-        const hasRole = message.guild.member(message.author).roles.has((role) => {
+        const hasRole = member.roles.cache.has((role) => {
             return roles.includes(role.name)
         })
 
