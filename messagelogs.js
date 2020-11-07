@@ -1,5 +1,4 @@
 const roles = ['Trucker Babies']
-const guild = client.guilds.cache.get("386343658514939915");
 
 module.exports = (client) => {
     const channelId = '769796468055474206'
