@@ -17,7 +17,7 @@ if(message.member.roles.cache.has('386344247843880960')){
             .setTimestamp()
             .setFooter('If you don’t follow any of these rules you will first be muted, then kicked, and then banned.')
             .setDescription(saytext)
-            guild.channels.cache.get('763475311114977300').send(embed);
+            client.channels.cache.find(ch => ch.name === "📜rules").send(embed)
             message.delete();
 
         }
