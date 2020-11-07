@@ -7,9 +7,8 @@ module.exports = {
 
 if(message.member.roles.cache.has('386344247843880960')){
     if (message.content.startsWith("!rules")) {
-            // Get the message to print
-
-            const args = message.content.split(" ").slice(2);
+        const channelId = '763475311114977300'
+            const args = message.content.split(" ").slice(1);
             let saytext = args.join(" ");
             const embed = new discord.MessageEmbed()
             .setColor('BLUE')
@@ -17,10 +16,11 @@ if(message.member.roles.cache.has('386344247843880960')){
             .setTimestamp()
             .setFooter('If you don’t follow any of these rules you will first be muted, then kicked, and then banned.')
             .setDescription(saytext)
-            member.guild.channels.cache.find(channel => channel.name === "📜rules").send(embed)
+            const targetChannel = guild.channels.cache.get(channelId)
+            targetChannel.send(embed);
             message.delete();
 
         }
         }
     }
-};
+}};
