@@ -1,5 +1,4 @@
 const discord = require('discord.js')
-const client = new Discord.Client();
 
 module.exports = {
     name: 'rules',
@@ -18,7 +17,7 @@ if(message.member.roles.cache.has('386344247843880960')){
             .setTimestamp()
             .setFooter('If you don’t follow any of these rules you will first be muted, then kicked, and then banned.')
             .setDescription(saytext)
-            client.channels.cache.find(ch => ch.name === "📜rules").send(embed)
+            member.guild.channels.cache.find(channel => channel.name === "📜rules").send(embed)
             message.delete();
 
         }
