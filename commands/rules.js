@@ -23,4 +23,4 @@ if(message.member.roles.cache.has('386344247843880960')){
         }
         }
     }
-}};
+};
